@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Exercises</title>
+
+
+	<script>
+		function Button1_onclick() {
+
+			var s = "壹貳參肆伍陸柒捌玖拾";
+			var n = txt1.value;
+			txt2.value = s.substr(n - 1, 1)
+
+			if (n - 1 < 0 || n - 1 > 9) {
+				txt2.value = "請填1~10喔";
+			}
+			else {
+				if (txt1.value % 1 != 0) {
+					txt2.value = "請輸入整數喔"
+				}
+				else {
+					txt1.value = n;
+				}
+			}
+		}
+
+		function Button2_onclick() {
+
+			var i = txt3.value
+
+			if (i < 0 || i > 9999) {
+				txt4.value = "請輸入0~9999的正整數喔～";
+			}
+
+			else {
+				if (txt3.value % 1 != 0) {
+					txt4.value = "請輸入整數喔"
+				}
+				else {
+					txt4.value = (new Number(i) + 10000).toString().substr(1)
+				}
+
+			}
+
+		}
+	</script>
+
+
+</head>
+
+<body>
+	<input type="button" id="Button1" name="Button1" value="點我一下，執行 JavaScript" onclick="Button1_onclick()">
+	<br><br> 填入數字:
+	<input type="text" id="txt1" name="txt1" value=" " size="40">
+	<br><br> 轉成中文:
+	<INPUT type="text" id="txt2" name="txt2" value=" " size="40">
+
+
+	<br><br><input type="button" id="Button2" name="Button2" value="點我一下，執行 JavaScript" onclick="Button2_onclick()">
+	<br><br> 填入0~9999的正整數:
+	<input type="text" id="txt3" name="txt3" value=" " size="40">
+	<br><br> 將上列以四位數填寫:
+	<INPUT type="text" id="txt4" name="txt4" value=" " size="40">
+
+	<br /><br />
+
+	<h3>星塔：金字塔形狀</h3><br />
+
+	<script type="text/javascript">
+		function getLine(count, what) {
+			var line = ""
+			for (var i = 1; i <= count; i++) {
+				line = line + what;
+			}
+			return line;
+		}
+
+		function getLine2(count2, what2) {
+			var line2 = ""
+			for (var j = 1; j <= count2; j++) {
+				line2 = line2 + what2;
+			}
+			return line2;
+		}
+
+		for (i = 1, j = 5; i <= 9, j >= 1; i = i + 2, j = j - 1) {
+			document.write(getLine2(j, "&ensp;") + getLine(i, "*") + "<br>");
+		}
+	</script>
+
+	<div id="debug"></div>
+
+</body>
+
+</html>
