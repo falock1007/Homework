@@ -1,6 +1,6 @@
 <table border="1" width="50%" align="center">
 
-    <?php $col = 10; $max=100000;
+    <?php $col = 10; $max=1000;
 for($x=1;$x<=$max;$x++){
     $z=0;
     for ($y = 1; $y <= sqrt($x); $y++) {
