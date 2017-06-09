@@ -6,13 +6,14 @@ func swapArray( _ array:inout Array<Int>, _ x:Int, _ y:Int) {
     }else if array.count < 2 {
         print("Wrong02 : 陣列太短")
     }else{
-        let temp = array[x]
-        array[x] = array[y]
-        array[y] = temp
+        swap(&array[x], &array[y])
+//        let temp = array[x]
+//        array[x] = array[y]
+//        array[y] = temp
         print(array.description)
     }
 }
 
 var a6:[Int] = [1,2,3,4,5]
 var a7:[Int] = []
-swapArray(&a7,1,1)
+swapArray(&a6,2,4)
